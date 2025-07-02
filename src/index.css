@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+
+/* Add these styles to your CSS */
+.loader {
+  border: 6px solid #f3f3f3; /* Light gray background */
+  border-top: 6px solid #3498db; /* Blue top */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rdt_TableCell:last-child {
+  border-right: none !important;
+}
+
+label.required::after {
+  content: '*';
+  color: #ef4444; /* Tailwind red-500 */
+  margin-left: 0.25rem;
+  font-weight: bold;
+}
