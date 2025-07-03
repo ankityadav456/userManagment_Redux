@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 shadow-md">
+        <header className="fixed top-0 w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 shadow-md mb-10">
             <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
                 <Link to="/" className="text-white text-3xl font-extrabold tracking-wide">
                     UserApp

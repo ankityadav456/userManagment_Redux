@@ -52,41 +52,41 @@ const UserForm = () => {
         }
     };
 
-const validateForm = () => {
-    const newErrors = {};
+    const validateForm = () => {
+        const newErrors = {};
 
-    if (!form?.name?.trim()) newErrors.name = 'Name is required';
-    if (!form?.username?.trim()) newErrors.username = 'Username is required';
+        if (!form?.name?.trim()) newErrors.name = 'Name is required';
+        if (!form?.username?.trim()) newErrors.username = 'Username is required';
 
-    if (!form?.email?.trim()) {
-        newErrors.email = 'Email is required';
-    } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
-        newErrors.email = 'Email is invalid';
-    }
+        if (!form?.email?.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+            newErrors.email = 'Email is invalid';
+        }
 
-    if (!form?.password?.trim()) {
-        newErrors.password = 'Password is required';
-    } else if (form.password.length < 6) {
-        newErrors.password = 'Password must be at least 6 characters';
-    }
+        if (!form?.password?.trim()) {
+            newErrors.password = 'Password is required';
+        } else if (form.password.length < 6) {
+            newErrors.password = 'Password must be at least 6 characters';
+        }
 
-    if (!form?.gender?.trim()) newErrors.gender = 'Gender is required';
-    if (!form?.dob) newErrors.dob = 'Date of Birth is required';
+        if (!form?.gender?.trim()) newErrors.gender = 'Gender is required';
+        if (!form?.dob) newErrors.dob = 'Date of Birth is required';
 
-    const address = form?.address || {};
-    if (!address?.street?.trim()) newErrors.street = 'Street is required';
-    if (!address?.city?.trim()) newErrors.city = 'City is required';
-    if (!address?.country?.trim()) newErrors.country = 'Country is required';
-    if (!address?.zipcode?.trim()) newErrors.zipcode = 'ZIP Code is required';
+        const address = form?.address || {};
+        if (!address?.street?.trim()) newErrors.street = 'Street is required';
+        if (!address?.city?.trim()) newErrors.city = 'City is required';
+        if (!address?.country?.trim()) newErrors.country = 'Country is required';
+        if (!address?.zipcode?.trim()) newErrors.zipcode = 'ZIP Code is required';
 
-    if (!form?.phone?.trim()) {
-        newErrors.phone = 'Phone number is required';
-    } else if (!/^\d{10,15}$/.test(form.phone)) {
-        newErrors.phone = 'Phone must be 10–15 digits';
-    }
+        if (!form?.phone?.trim()) {
+            newErrors.phone = 'Phone number is required';
+        } else if (!/^\d{10,15}$/.test(form.phone)) {
+            newErrors.phone = 'Phone must be 10–15 digits';
+        }
 
-    return newErrors;
-};
+        return newErrors;
+    };
 
 
     const handleSubmit = (e) => {
@@ -121,7 +121,7 @@ const validateForm = () => {
         );
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 flex justify-center items-start p-6 animate-gradient-bg">
+        <div className="min-h-screen px-6 py-6 bg-gradient-to-br from-blue-50 to-white pt-20 pb-16 flex justify-center items-start ">
             <div className="w-full max-w-7xl bg-white shadow-2xl rounded-2xl border border-gray-200">
                 <form onSubmit={handleSubmit} className="p-8">
                     <div className="flex justify-between items-center border-b border-gray-300 pb-4 mb-6">
@@ -184,8 +184,8 @@ const validateForm = () => {
                                         value={form[name]}
                                         onChange={handleChange}
                                         className={`px-4 py-3 rounded-lg border-2 transition-colors duration-300 focus:outline-none ${errors[name]
-                                                ? 'border-red-500 ring-2 ring-red-400'
-                                                : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
+                                            ? 'border-red-500 ring-2 ring-red-400'
+                                            : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
                                             } bg-white shadow-sm`}
                                     >
                                         {options.map(({ value, text }) => (
@@ -202,8 +202,8 @@ const validateForm = () => {
                                         value={form[name]}
                                         onChange={handleChange}
                                         className={`px-4 py-3 rounded-lg border-2 transition-colors duration-300 focus:outline-none ${errors[name]
-                                                ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
-                                                : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
+                                            ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
+                                            : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
                                             } bg-white shadow-sm`}
                                     />
                                 )}
@@ -234,8 +234,8 @@ const validateForm = () => {
                                 dropdownMode="select"
                                 withPortal
                                 className={`w-full px-4 py-3 rounded-lg border-2 transition-colors duration-300 focus:outline-none ${errors.dob
-                                        ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
-                                        : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
+                                    ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
+                                    : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
                                     } bg-white shadow-sm`}
                             />
                             {errors.dob && (
@@ -263,8 +263,8 @@ const validateForm = () => {
                                     value={form.address[name] || ''}
                                     onChange={handleChange}
                                     className={`px-4 py-3 rounded-lg border-2 transition-colors duration-300 focus:outline-none ${errors[name]
-                                            ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
-                                            : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
+                                        ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
+                                        : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
                                         } bg-white shadow-sm`}
                                 />
                                 {errors[name] && (
@@ -287,8 +287,8 @@ const validateForm = () => {
                                 value={form.phone}
                                 onChange={handleChange}
                                 className={`px-4 py-3 rounded-lg border-2 transition-colors duration-300 focus:outline-none ${errors.phone
-                                        ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
-                                        : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
+                                    ? 'border-red-500 ring-2 ring-red-400 animate-pulse'
+                                    : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-400'
                                     } bg-white shadow-sm`}
                             />
                             {errors.phone && (

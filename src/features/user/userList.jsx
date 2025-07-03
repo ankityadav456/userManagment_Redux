@@ -150,9 +150,9 @@ function UserList() {
   }
 
   return (
-    <div className="min-h-screen px-6 py-6 bg-gradient-to-br from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="flex justify-between items-center border-b px-6 py-4 bg-blue-50">
+    <div className="min-h-screen px-6 py-6 bg-gradient-to-br from-blue-50 to-white pt-20 pb-16">
+      <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg shadow-gray-400 overflow-hidden">
+        <div className="flex justify-between items-center border-b px-6 py-4 bg-white">
           <h2 className="text-2xl font-semibold text-gray-800 animate-fade-in">
             👥 User Management
           </h2>
