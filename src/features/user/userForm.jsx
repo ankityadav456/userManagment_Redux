@@ -121,8 +121,8 @@ const UserForm = () => {
         );
 
     return (
-        <div className="min-h-screen px-6 py-6 bg-gradient-to-br from-blue-50 to-white pt-20 pb-16 flex justify-center items-start ">
-            <div className="w-full max-w-7xl bg-white shadow-2xl rounded-2xl border border-gray-200">
+        <div className="min-h-screen px-6 py-6 bg-gradient-to-br from-blue-50/10 to-white/50 pt-20 pb-16 flex justify-center items-start ">
+            <div className="w-full max-w-7xl bg-white/80 shadow-2xl rounded-2xl border border-gray-200">
                 <form onSubmit={handleSubmit} className="p-8">
                     <div className="flex justify-between items-center border-b border-gray-300 pb-4 mb-6">
                         <h2 className="text-3xl font-extrabold text-gray-900 tracking-wide">

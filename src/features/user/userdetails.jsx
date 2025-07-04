@@ -40,8 +40,8 @@ const UserDetails = () => {
   }
 
   return (
-    <div className="min-h-screen px-6 py-6 bg-gradient-to-br from-blue-50 to-white pt-20 pb-16 flex justify-center items-start ">
-      <div className="bg-white shadow-2xl rounded-2xl max-w-5xl w-full p-10">
+    <div className="min-h-screen px-6 py-6 bg-gradient-to-br from-blue-50/10 to-white/50 pt-20 pb-16 flex justify-center items-start ">
+      <div className="bg-white/80 shadow-2xl rounded-2xl max-w-7xl w-full p-10">
         <h1 className="text-4xl font-extrabold text-gray-900 mb-8 tracking-wide">
           User Details
         </h1>
