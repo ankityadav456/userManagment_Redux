@@ -128,7 +128,7 @@ const FloatingSpheresBackground = () => {
         height: '100vh',
         zIndex: -1,
         pointerEvents: 'none',
-        backgroundColor: '#fff',
+        backgroundColor: '#fff', // dark subtle background color behind spheres
       }}
     />
   );
