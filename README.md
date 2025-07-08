@@ -1,12 +1,28 @@
-# React + Vite
+# User Management App 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive user management app built with **React**, **Redux Toolkit**, **Tailwind CSS**, and **React Router**. Includes CRUD operations, form validation, and enhanced UI.
 
-Currently, two official plugins are available:
+## Features
+- Create / Edit / Delete users
+- Redux Toolkit with Async Thunks
+- Form validation & date picker
+- Tailwind-based professional UI
+- Search, sort, filter using `react-data-table-component`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Skills Demonstrated
+- 🔥 React Hooks & Routing
+- 🧠 Redux Toolkit (RTK)
+- 💅 Tailwind CSS Design
+- ✅ Form validation + Error handling
+- 📦 JSON Server API Integration
 
-## Expanding the ESLint configuration
+## Demo Screenshot
+_Add here later if hosted_
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+```bash
+git clone https://github.com/<your-username>/user-management-redux.git
+cd user-management-redux
+npm install
+npm run dev
