@@ -16,9 +16,6 @@ A responsive user management app built with **React**, **Redux Toolkit**, **Tail
 - ✅ Form validation + Error handling
 - 📦 JSON Server API Integration
 
-## Demo Screenshot
-_Add here later if hosted_
-
 ## Getting Started
 
 ```bash
