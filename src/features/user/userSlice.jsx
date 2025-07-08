@@ -1,47 +1,46 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import usersData from '../../data/users.json';
+import axios from 'axios';
 
-// fetchUsers thunk - returns all users or one user from current store (simulate async)
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async (id = null, { getState }) => {
-  const stateUsers = getState().users.users;
-  if (id) {
-    const user = stateUsers.find(u => u.id.toString() === id.toString());
-    return user ? [user] : [];
+const API = 'http://localhost:3001/users';
+
+// Fetch all users (GET /users)
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+  const res = await axios.get(API);
+  return res.data; // JSON Server returns an array of users directly
+});
+
+// Add a new user (POST /users)
+export const addUser = createAsyncThunk('users/addUser', async (user) => {
+  const userToPost = { ...user };
+  if (userToPost.id == null) {
+    delete userToPost.id; // Remove id if null or undefined
   }
-  return stateUsers;
+  const res = await axios.post(API, userToPost);
+  return res.data;
 });
 
-export const addUser = createAsyncThunk('users/addUser', async (user, { getState }) => {
-  const state = getState();
-  const existingUsers = state.users.users;
-
-  // Find max ID in current users
-  const maxId = existingUsers.length > 0
-    ? Math.max(...existingUsers.map(u => u.id || 0))
-    : 0;
-
-  return { ...user, id: maxId + 1 };
-});
-
-
+// Update an existing user (PUT /users/:id)
 export const updateUser = createAsyncThunk('users/updateUser', async (user) => {
-  return user;
+  const res = await axios.put(`${API}/${user.id}`, user);
+  return res.data;
 });
 
+// Delete a user (DELETE /users/:id)
 export const deleteUser = createAsyncThunk('users/deleteUser', async (id) => {
+  await axios.delete(`${API}/${id}`);
   return id;
 });
 
 const userSlice = createSlice({
   name: 'users',
   initialState: {
-    users: usersData,
+    users: [],
     loading: false,
     error: null,
   },
   extraReducers: (builder) => {
     builder
-      // fetchUsers
+      // Fetch users
       .addCase(fetchUsers.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -52,25 +51,25 @@ const userSlice = createSlice({
       })
       .addCase(fetchUsers.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload;
+        state.error = action.error.message;
       })
-      // addUser
+
+      // Add user
       .addCase(addUser.fulfilled, (state, action) => {
         state.users.push(action.payload);
-        state.loading = false;
       })
-      // updateUser
+
+      // Update user
       .addCase(updateUser.fulfilled, (state, action) => {
-        const index = state.users.findIndex(u => u.id === action.payload.id);
-        if (index !== -1) {
-          state.users[index] = action.payload;
+        const idx = state.users.findIndex(u => u.id === action.payload.id);
+        if (idx !== -1) {
+          state.users[idx] = action.payload;
         }
-        state.loading = false;
       })
-      // deleteUser
+
+      // Delete user
       .addCase(deleteUser.fulfilled, (state, action) => {
         state.users = state.users.filter(u => u.id !== action.payload);
-        state.loading = false;
       });
   },
 });

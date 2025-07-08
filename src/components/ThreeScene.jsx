@@ -114,6 +114,7 @@ const FloatingSpheresBackground = () => {
 
       renderer.forceContextLoss();
       renderer.dispose();
+      
     };
   }, []);
 

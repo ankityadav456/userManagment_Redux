@@ -11,8 +11,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <BrowserRouter>
-    <AnimatedCursor />
-    <ThreeScene />
+    {/* <AnimatedCursor /> */}
+    {/* <ThreeScene /> */}
       <Header />
       <main>
         <Routes>
